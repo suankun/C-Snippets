@@ -21,9 +21,11 @@ int main()
 	scanf("%d", &c);
 	
 	/*logic to determin if there is at least to number divisible without a reminder*/
-	if(a % b == 0 || b % a == 0 || b % c == 0 || c % b == 0 || a % c == 0 || c % a == 0)
-		printf("Divisible");
+	if(a == 0 || b == 0 || c == 0)
+		printf("Cannot divide by 0!\n");
+	else if(a % b == 0 || b % a == 0 || b % c == 0 || c % b == 0 || a % c == 0 || c % a == 0)
+		printf("Divisible\n");
 	else
-		printf("Not divisible");
+		printf("Not divisible\n");
 	return 0;
 }
