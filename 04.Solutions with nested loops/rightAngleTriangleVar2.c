@@ -20,10 +20,18 @@ int main()
     /*print a right-angle triangle using nested for loops*/
     for(i = 1; i <= n; i++)
     {
+      /*variant with for loop
         for(j = 1; j <= i; j++)
         {
             printf("%d", i);
         }
+        variant with while loop*/
+        j = i;
+        while(j>0)
+        {
+        	printf("%d", i);
+        	j--;
+		}
         printf("\n");
     }
     
