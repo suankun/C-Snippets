@@ -1,6 +1,10 @@
 /*
  * Program that receive an integer - "n".
  * Program should print a right-angle triangle.
+ * For example for n = 3;
+ * 1
+ * 1 2
+ * 1 2 3
  */
 
 #include <stdio.h>
