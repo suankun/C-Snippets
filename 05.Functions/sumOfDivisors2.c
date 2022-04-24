@@ -25,11 +25,14 @@ int sumOfDivisors(int num)
     if(num == 1)
         return num;
         
-    for(i = 2; i < num; i++)
+    for(i = 2; i * i < num; i++)
     {
         if(num % i == 0)
-            sum = sum + i;
+            sum += i + (num / i);
     }
     
-    return sum;
+    if(i * i == num)
+        sum += i;
+    
+    return sum + num;
 }
