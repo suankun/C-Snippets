@@ -8,15 +8,20 @@
 
 int main()
 {
-    /*Declare the variables*/
+    /*Declare the variables for earth days  and jupiter years.*/
     int earthDays, jupiterYears;
+    /*
+     * Initialized variable containing 12 earth years
+     * including additional 3 days for the leap years.
+     */
+    int twelveEarthYears = 4383;
 
     /*User input.*/
     printf("Enter Earth days which you would like to be converted: ");
     scanf("%d", &earthDays);
 
-    /*Calculating the years.*/
-    jupiterYears = earthDays / 365 / 12;
+    /*Calculating the Jupiter years.*/
+    jupiterYears = earthDays / twelveEarthYears;
 
     /*Printing the result.*/
     printf("These days are equivalent of %d years on Jupiter!\n", jupiterYears);
