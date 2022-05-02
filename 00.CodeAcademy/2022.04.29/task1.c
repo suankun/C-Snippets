@@ -9,7 +9,7 @@ int main()
     {
         printf("Enter a 3 digit number: ");
         scanf("%d", &num);
-    } while (num <= 100 || num >= 999);
+    } while (num < 100 || num > 999);
 
     a = num % 10;
     num /= 100;
