@@ -12,7 +12,7 @@ void count_positives_sum_negatives(
   }
 }
 
-/*Alternative solution:*/
+/*Alternative solution 1:*/
 void count_positives_sum_negatives(int *values, size_t count, int *positivesCount, int *negativesSum) {
   int cnt = 0; int sm = 0;
   for (size_t i = 0; i < count; i++) {
@@ -21,4 +21,12 @@ void count_positives_sum_negatives(int *values, size_t count, int *positivesCoun
   }
   *positivesCount = cnt;
   *negativesSum = sm;
+}
+
+/*Alternative solution 2:*/
+void count_positives_sum_negatives(int *values, size_t count, int *positivesCount, int *negativesSum){
+  while(count--){
+    values[count]<=0 ? (*negativesSum)+=values[count] : (*positivesCount)++;
+  }
+
 }
