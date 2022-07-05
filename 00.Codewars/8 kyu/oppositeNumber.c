@@ -2,7 +2,7 @@ float opposite(float num) {
   return num * -1;
 }
 
-Alternative solution:
+// Alternative solution:
 float opposite(float num) {
   return -num;
 }

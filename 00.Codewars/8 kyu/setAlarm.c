@@ -5,7 +5,7 @@ bool set_alarm(bool employed, bool vacation) {
   return (employed == true && vacation == false) ? true : false;
 }
 
-Alternative solution:
+// Alternative solution:
 
 #include <stdbool.h>
 

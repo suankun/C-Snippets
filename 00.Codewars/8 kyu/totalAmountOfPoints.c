@@ -12,7 +12,7 @@ int points(const char* const games[10]) {
     return pts;
 }
 
-Alternative solution:
+// Alternative solution:
 #include <stdlib.h>
 
 int points(char* games[])
