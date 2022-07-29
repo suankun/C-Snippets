@@ -1,0 +1,4 @@
+1	down-right diagonal  3 squares
+2	up 7 squares
+3	left 7 squares
+4	down 7 squares

@@ -1,0 +1,11 @@
+1	up-right diagonal  1 squares
+2	down 4 squares
+3	left 5 squares
+4	up 1 squares
+5	up-right diagonal  1 squares
+6	down-right diagonal  5 squares
+7	down-left diagonal  1 squares
+8	left 3 squares
+9	down-left diagonal  1 squares
+10	up-left diagonal  4 squares
+11	up 1 squares
