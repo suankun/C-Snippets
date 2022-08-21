@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef unsigned int uint;
-
 int maxMultiple(int divisor, int bound) 
 {
     int res = 0;
