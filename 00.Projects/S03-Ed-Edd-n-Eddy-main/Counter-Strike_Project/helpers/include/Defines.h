@@ -1,0 +1,20 @@
+#ifndef DEFINES_H_
+#define DEFINES_H_
+
+#define DESERT_EAGLE_ARMOR_RATE 0.25
+#define DESERT_EAGLE_HEALTH_RATE 0.75
+#define GLOCK_ARMOR_RATE 0.5
+#define GLOCK_HEALTH_RATE 0.5
+
+#define GLOCK_ROUNDS_PER_FIRE 3
+#define DESERT_EAGLE_ROUNDS_PER_FIRE 1
+
+enum PistolType {
+  GLOCK, DESERT_EAGLE
+};
+
+enum PlayerDefines {
+  PLAYER_ONE, PLAYER_TWO, PLAYERS_COUNT
+};
+
+#endif /* DEFINES_H_ */
