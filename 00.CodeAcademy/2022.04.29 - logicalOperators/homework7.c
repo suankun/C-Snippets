@@ -17,26 +17,28 @@
 
 #include <stdio.h>
 
-int main()
-{
-    /*Printing pattern "a".*/
-    printf("# # # # # # # # # # #\n");
+void printPatternA() {
+	printf("# # # # # # # # # # #\n");
     printf("  # # # # # # # # #\n");
     printf("    # # # # # # #\n");
     printf("      # # # # #\n");
     printf("        # # #\n");
     printf("          #\n");
     printf("         (a)\n\n");
-    /*Printing pattern "b".*/
-    printf("          #\n");
+}
+
+void printPatternB() {
+	printf("          #\n");
     printf("        # # #\n");
     printf("      # # # # #\n");
     printf("    # # # # # # #\n");
     printf("  # # # # # # # # #\n");
     printf("# # # # # # # # # # #\n");
     printf("         (b)\n\n");
-    /*Printing pattern "b".*/
-    printf("          #\n");
+}
+
+void printPatternC() {
+	printf("          #\n");
     printf("        # # #\n");
     printf("      # # # # #\n");
     printf("    # # # # # # #\n");
@@ -48,6 +50,18 @@ int main()
     printf("        # # #\n");
     printf("          #\n");
     printf("         (c)\n");
+}
+
+int main()
+{
+    // printing pattern "a"
+	printPatternA();
+
+    // printing pattern "b"
+	printPatternB();
+    
+    // printing pattern "c"
+    printPatternC();
 
     return 0;
 }

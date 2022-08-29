@@ -7,17 +7,19 @@
 
 int main()
 {
-    /*Declare the variable*/
+    // declare the variable
     int year, days, hours, minutes, seconds;
 
-    /*Initializing variables with corresponding values*/
+    // initializing variables with corresponding values
     days = 365;
     hours = 24;
     minutes = 60;
     seconds = 60;
-    /*Calculating the seconds.*/
+
+    // calculating the seconds
     year = days * hours * minutes * seconds;
-    /*Printing the result.*/
+    
+    // printing the result
     printf("The total seconds in one year is %d.\n", year);
 
     return 0;

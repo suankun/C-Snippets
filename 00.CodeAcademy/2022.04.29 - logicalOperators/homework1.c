@@ -8,87 +8,60 @@
 
 #include <stdio.h>
 
-int main()
-{
-    /*Declare the variables*/
-    int num, year;
-    int firstDigit, thirdDigit, fifthDigit, sixthDigit;
-
-    /*User input.*/
+int readUserInput() {
+    int num = 0;
     do
     {
-        printf("Enter a 6 digits number: ");
         scanf("%d", &num);
-    } while (num < 100000 || num > 999999);
-
-    /*Take out 1, 3, 5, 6 digits from the user input.*/
-    firstDigit = (num/100000) % 10;
-    thirdDigit = (num/1000) % 10;
-    fifthDigit = (num/10) % 10;
-    sixthDigit = num % 10;
-    /*Creating a year from the received digits.*/
-    year = (firstDigit * 1000) + (thirdDigit * 100) + (fifthDigit * 10) + sixthDigit;
-    /*Printing the year.*/
-    printf("%d ", year);
-    /*Logic to find out if a year is a Leap and printing the result.*/
-    if(year % 400 == 0)
-        printf("is a Leap Year!\n");
-    else if(year % 100 == 0)
-        printf("is not a Leap Year!\n");
-    else if(year % 4 == 0)
-        printf("is a Leap Year!\n");
-    else
-        printf("is not a Leap Year!\n");
-
-    return 0;
+    } while (num <= 100000 || num >= 999999);
+    return num;
 }
 
-/////////////
+int calcYear(int num) {
+    int sixthDigit = num % 10;
+    num /= 10;
+    int fifthDigit = num % 10;
+    num /= 100;
+    int thirdDigit = num % 10;
+    num /= 100;
+    int firstDigit = num;
 
-// void leapYear(int year) {
+    int year = (firstDigit * 1000) + (thirdDigit * 100) + (fifthDigit * 10) + sixthDigit;
+    return year;
+}
 
-//    // leap year if perfectly divisible by 400
-//    if (year % 400 == 0) {
-//       printf("%d is a leap year.\n", year);
-//    }
-//    // not a leap year if divisible by 100
-//    // but not divisible by 400
-//    else if (year % 100 == 0) {
-//       printf("%d is not a leap year.\n", year);
-//    }
-//    // leap year if not divisible by 100
-//    // but divisible by 4
-//    else if (year % 4 == 0) {
-//       printf("%d is a leap year.\n", year);
-//    }
-//    // all other years are not leap years
-//    else {
-//       printf("%d is not a leap year.\n", year);
-//    }
-// }
+void leapYear(int year) {
 
-// int main()
-// {
-//     int num = 0;
+   // leap year if perfectly divisible by 400
+   if (year % 400 == 0) {
+      printf("%d is a leap year.\n", year);
+   }
+   // not a leap year if divisible by 100
+   // but not divisible by 400
+   else if (year % 100 == 0) {
+      printf("%d is not a leap year.\n", year);
+   }
+   // leap year if not divisible by 100
+   // but divisible by 4
+   else if (year % 4 == 0) {
+      printf("%d is a leap year.\n", year);
+   }
+   // all other years are not leap years
+   else {
+      printf("%d is not a leap year.\n", year);
+   }
+}
 
-//     do
-//     {
-//         scanf("%d", &num);
-//     } while (num <= 100000 || num >= 999999);
+int main()
+{
+    // read 6 digit number from the user input
+    int num = readUserInput();
 
-//     int sixthDigit = num % 10;
-//     num /= 10;
-//     int fifthDigit = num % 10;
-//     num /= 100;
-//     int thirdDigit = num % 10;
-//     num /= 100;
-//     int firstDigit = num;
+    // create year from the input 
+    int year = calcYear(num);
     
-//     int year = 0;
-//     year = (firstDigit * 1000) + (thirdDigit * 100) + (fifthDigit * 10) + sixthDigit;
-
-//     leapYear(year);
+    // check if the year is leap
+    leapYear(year);
     
-
-//     return 0;
-// }
+    return 0;
+}

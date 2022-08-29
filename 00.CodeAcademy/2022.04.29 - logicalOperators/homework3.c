@@ -12,16 +12,8 @@
 
 #include <stdio.h>
 
-int main()
-{
-    /*Declare variables*/
-    int caravan = 3, caravanPrice = 90;
-    int camper = 3, camperPrice = 100;
+int priceList() {
     int cost = 0;
-    int vehiclesCounter = 0;
-    int days = 0;
-
-    /*Menu for caravans and campers.*/
     do
     {
         printf("Price list:\n");
@@ -31,29 +23,57 @@ int main()
         printf("Enter your choice: ");
         scanf("%d", &cost);
     } while (cost < 1 || cost > 2);
+    return cost;
+}
 
-    /* 
-     * Using do while loop to ask for the number of vehicles
-     * which the client is needed. 
-     */
+int vehiclesNumber() {
+    int vehiclesCounter = 0;
     do
     {
         printf("How many of them: ");
         scanf("%d", &vehiclesCounter);
     } while (vehiclesCounter < 1 || vehiclesCounter > 3);
-    
-    /*Taking the days.*/
+    return vehiclesCounter;
+}
+
+int daysOfUsage() {
+    int days = 0;
     printf("For how many days: ");
     scanf("%d", &days);
+    return days;
+}
 
-    /*Calculating the total cost.*/
-    if(cost == 1)
-        cost = 90 * vehiclesCounter * days;
+int totalCost(int cost, int vehiclesCounter, int days) {
+	int total = 0;
+	int caravanPrice = 90;
+    int camperPrice = 100;
+	if(total == 1)
+        total = caravanPrice * vehiclesCounter * days;
     else
-        cost = 100 * vehiclesCounter * days;
+        total = camperPrice * vehiclesCounter * days;
+	return total;
+}
 
-    /*Printing the result.*/
-    printf("The client owes: %dlv\n", cost);
+void printResult(int total) {
+	printf("The client owes: %d lv\n", total);
+}
+
+int main()
+{
+	// Menu for caravans and campers
+    int cost = priceList();
+    
+    // number of vehicles which the client is needed
+    int vehiclesCounter = vehiclesNumber();
+    
+    // days of usage
+    int days = daysOfUsage();
+
+    // calculating the total cost
+    int total = totalCost(cost, vehiclesCounter, days);
+
+    // printing the result
+    printResult(total);
 
     return 0;
 }

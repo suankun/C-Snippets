@@ -6,23 +6,20 @@
 
 #include <stdio.h>
 
-#define SIZE 10
+#define SIZE 5
 
-int main()
-{
-    int arr[SIZE];
-    int i, j;
-    int temp, num, counter;
-
-    printf("Enter %d numbers: \n", SIZE);
-    // User input.
-    for(i = 0; i < SIZE; i++)
-        scanf("%d", &arr[i]);
-
-    // To sort all entered element in ascending order.
-    for (i = 0; i < SIZE; i++)
+void arrayInit(int *arr) {
+    for (size_t i = 0; i < SIZE; i++)
     {
-        for (j = i + 1; j < 10; j++)
+        scanf("%d", &arr[i]);
+    }
+}
+
+void sortArray(int *arr) {
+    int temp = 0;
+    for (size_t i = 0; i < SIZE; i++)
+    {
+        for (size_t j = i + 1; j < SIZE; j++)
         {
             if(arr[i] > arr[j])
             {
@@ -32,26 +29,40 @@ int main()
             }
         }
     }
+}
 
-    // For counting how many times each number is occur.
+void checkForNumbersCount(int *arr) {
+    int num = 0, counter = 0;
+    int i = 0, j = 0;
     for (i = 0; i < SIZE; i = j)
     {
         num = arr[i];
         counter = 1;
-        for (j = i + 1; j < SIZE; j++)
+        for (j = i+1; j < SIZE; j++)
         {
             if (arr[j] != num)
             {
                 break;
-            }
-            else
-            {
+            } else {
                 counter++;
             }
         }
-        printf("\nNumber %d - occurs %d times", num, counter);
+        printf("Num: %d-%d", num, counter);
+        printf("\n");
     }
     printf("\n");
+}
 
+int main() {
+    // array initialization
+    int arr[SIZE] = {0};
+    arrayInit(arr);
+
+    // sort the array
+    sortArray(arr);
+
+    // check and print for the numbers count
+    checkForNumbersCount(arr);
+    
     return 0;
 }

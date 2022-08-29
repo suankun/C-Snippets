@@ -10,51 +10,75 @@
 
 #include <stdio.h>
 
+int menuOrder() {
+    int order = 0;
+    printf("-> Price list: <-\n");
+    printf("Tomatoes = 4.50lv/kg - enter 1\n");
+    printf("Flour = 1.80lv/kg - enter 2\n");
+    printf("Yogurt = 0.50lv/pcs - enter 3\n");
+    printf("Funnel ice cream = 0.60lv/pcs - enter 4\n");
+    printf("Sweets = 1.50lv/kg - enter 5\n");
+    printf("Lollipops = 0.15lv/pcs - enter 6\n");
+    printf("For EXIT - enter 0\n");
+    printf("Enter your choice: ");
+    scanf("%d", &order);
+    return order;
+}
+
+int quantity() {
+	int qty = 0;
+	printf("How many kg/pcs: ");
+    scanf("%d", &qty);
+	return qty;
+}
+
+int totalPrice(float *totalCost, int order, int qty) {
+	float tomatoes = 4.50, flour = 1.80, yogurt = 0.50;
+    float funnelIceCream = 0.60, sweets = 1.50, lollipops = 0.15;
+	switch (order)
+	{
+		case 1: *totalCost += tomatoes * qty; break;
+		case 2: *totalCost += flour * qty; break;
+		case 3: *totalCost += yogurt * qty; break;
+		case 4: *totalCost += funnelIceCream * qty; break;
+		case 5: *totalCost += sweets * qty; break;
+		case 6: *totalCost += lollipops * qty; break;
+		default: break;
+	}
+	return *totalCost;
+}
+
+void printResult(int *totalCost) {
+	printf("Total cost is: %.2flv\n", *totalCost);
+}
+
 int main()
 {
-    /*Declare variables*/
-    float tomatoes = 4.50, flour = 1.80, yogurt = 0.50;
-    float funnelIceCream = 0.60, sweets = 1.50, lollipops = 0.15;
+    // declare variables
     float totalCost = 0;
-    int order, qty;
+    int order = 0, qty = 0;
 
-    /*Table for ordering foods from the minimarket.*/
+    // table for ordering foods from the minimarket
     do
     {
-        printf("-> Price list: <-\n");
-        printf("Tomatoes = 4.50lv/kg - enter 1\n");
-        printf("Flour = 1.80lv/kg - enter 2\n");
-        printf("Yogurt = 0.50lv/pcs - enter 3\n");
-        printf("Funnel ice cream = 0.60lv/pcs - enter 4\n");
-        printf("Sweets = 1.50lv/kg - enter 5\n");
-        printf("Lollipops = 0.15lv/pcs - enter 6\n");
-        printf("For EXIT - enter 0\n");
-        printf("Enter your choice: ");
-        scanf("%d", &order);
+        // menu
+        order = menuOrder();
         
-        /*If the client enter 0, break the loop.*/
+        // if the client enter 0, break the loop
         if(order == 0)
             break;
-        /*Receiving the qty of the order.*/
-        printf("How many kg/pcs: ");
-        scanf("%d", &qty);
+
+        // receiving the qty of the order
+        qty = quantity();
         
-        /*Calculating the price for the current order.*/
-        switch (order)
-        {
-            case 1: totalCost += tomatoes * qty; break;
-            case 2: totalCost += flour * qty; break;
-            case 3: totalCost += yogurt * qty; break;
-            case 4: totalCost += funnelIceCream * qty; break;
-            case 5: totalCost += sweets * qty; break;
-            case 6: totalCost += lollipops * qty; break;
-            default: break;
-        }
+        // calculating the price for the current order
+		totalPrice(&totalCost, order, qty);
+        
     } while (order != 0);
 
 
-    /*Printing the result.*/
-    printf("Total cost is: %.2flv\n", totalCost);
+    // printing the result
+    printResult(&totalCost);
 
     return 0;
 }

@@ -8,33 +8,33 @@
 
 #define SIZE 5
 
-int main()
-{
-    int arr[SIZE];
-    int arrCopy[SIZE];
-    int *ptr = arrCopy;
-    int i;
-
-    // User input
-    for (i = 0; i < SIZE; i++)
-    {
-        printf("Enter a value at index %d: ", i);
+void readArrayFromInput(int *arr) {
+    for (size_t i = 0; i < SIZE; i++) {
         scanf("%d", &arr[i]);
     }
+}
 
-    // Copying the array "arr" to array "arrCopy".
-    for (i = 0; ptr + i < &arrCopy[SIZE]; i++)
-    {
-        *(arrCopy + i) = *(arr + i);
+void printArray(int *arr) {
+    for (size_t i = 0; i < SIZE; i++) {
+        printf("%d ", arr[i]);
     }
-
-    // Printing and multiplying the value of each element by 2.
-    for (i = 0; i < SIZE; i++)
-    {
-        printf("%d\t", 2 * arr[i]);
-    }
-
     printf("\n");
+}
 
+void copyAndMultiplicateByTwo(int *arr, int *arrCopy) {
+    for (size_t i = 0; i < SIZE; i++) {
+        *(arrCopy+i) = *(arr+i)*2;
+    }
+}
+
+int main() {
+
+    int arr[5] = {0};
+    int arrCopy[5] = {0};
+    readArrayFromInput(arr);
+    copyAndMultiplicateByTwo(arr, arrCopy);
+    printArray(arr);
+    printArray(arrCopy);
+    
     return 0;
 }

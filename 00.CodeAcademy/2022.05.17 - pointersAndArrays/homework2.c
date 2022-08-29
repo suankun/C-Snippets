@@ -5,45 +5,53 @@
  * from the keyboard is found in the array. Print the array and answer whether
  * the number is found in the array.
  */
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define SIZE 20
 
-int main()
-{
-    int arr[SIZE];
-    int i;
-    int check = 0;
-    
-    // Filling the array with random numbers.
-    for (i = 0; i < SIZE; i++)
+void arrayInit(int *arr) {
+    for (size_t i = 0; i < SIZE; i++)
     {
-        arr[i] = rand();  
+        arr[i] = rand() % 99;
     }
+}
 
-    // Receiving an integer from the user.
-    printf("Enter a number to check if it is found in the array: ");
-    scanf("%d", &check);
-
-    // Print the array.
-    for (i = 0; i < SIZE; i++)
+void checkForTheNumber(int *arr, int num) {
+    bool isFound = false;
+    for (size_t i = 0; i < SIZE; i++)
     {
-        printf("%d\t", arr[i]);
+        if (*(arr+i) == num)
+            isFound = true;
+    }
+    isFound == true ?   printf("Yes, the number %d is in the array\n", num) :
+                        printf("No, the number %d is in NOT in the array\n", num);
+}
+
+void printArray(int *arr) {
+    for (size_t i = 0; i < SIZE; i++)
+    {
+        printf("%d ", arr[i]);
     }
     printf("\n");
+}
+
+int main() {
+    // array initialization
+    int arr[SIZE] = {0};
+    arrayInit(arr);
+
+    // user input the searched number
+    int num = 0;
+    printf("Enter the searched num: ");
+    scanf("%d", &num);
+
+    // check if the number is in the array
+    checkForTheNumber(arr, num);
+
+    // array print
+    printArray(arr);
     
-    // Checking and print if the number is found in the array.
-    for (i = 0; i < SIZE; i++)
-    {
-        if (*(arr + i) == check)
-        {
-            printf("%d is found at index %d", *(arr + i), i);
-        }
-    }
-
-    printf("\n");
-
     return 0;
 }

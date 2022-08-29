@@ -6,31 +6,48 @@
 
 #include <stdio.h>
 
-int main()
-{
-    int num, currentDigit;
-    int a = 0, b = 0;
-
+int readNumber() {
+    int num = 0;
     do
     {
         printf("Enter a 6 digits number: ");
         scanf("%d", &num);
     } while (num < 100000 || num > 999999);
+    return num;
+}
 
+void rectangleSides(int *a, int *b, int num) {
+    int currentDigit = 0;
     while(num > 0)
     {
         /*Taking the last digit from num.*/
         currentDigit = num % 10;
         /*Checking if the digit is even or odd.*/
         if(currentDigit % 2 == 0)
-            a += currentDigit;
+            *a += currentDigit;
         else
-            b += currentDigit;
+            *b += currentDigit;
         /*receiving the next digit*/
         num /= 10;
     }
+}
 
-    printf("The area of a rectancle with side a = %d and side b = %d is %d\n", a, b, a * b);
+void printResult(int *a, int *b) {
+    printf("The area of a rectancle with side a = %d and side b = %d is %d\n", *a, *b, (*a) * (*b));
+}
+
+int main()
+{
+    int a = 0, b = 0;
+
+    // read 6 digit number
+    int num = readNumber();
+
+    // calculating sides of the rectrangle
+    rectangleSides(&a, &b, num);
+    
+    //print result
+    printResult(&a, &b);
 
     return 0;
 }
