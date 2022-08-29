@@ -24,16 +24,16 @@ int main()
     {
         previous = current;
         current = malloc(sizeof(struct node));
-        current -> number = i + 1;
-        current -> next = NULL;
+        current->number = i + 1;
+        current->next = NULL;
 
-        previous -> next = current; 
+        previous->next = current; 
     }
 
 
-    for (struct node *p = head; p != NULL; p = p -> next)
+    for (struct node *p = head; p != NULL; p = p->next)
     {
-        printf("%d\n", p -> number);
+        printf("%d\n", p->number);
     }
 
     // free memory
@@ -42,7 +42,7 @@ int main()
     while (current)
     {
         tmp = current;
-        current = current -> next;
+        current = current->next;
         free(tmp);
     }
 

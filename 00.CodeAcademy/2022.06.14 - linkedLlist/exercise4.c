@@ -16,9 +16,9 @@ int main()
     struct node *prev;
 
     head = malloc(sizeof(struct node));
-    head -> phone = 454678;
-    strcpy(head -> name, "Ivan");
-    head -> next = NULL;
+    head->phone = 454678;
+    strcpy(head->name, "Ivan");
+    head->next = NULL;
     current = head;
 
     for (int i = 0; i < 3; i++)
@@ -28,19 +28,19 @@ int main()
 
         int temp_phone = 0;
         scanf("%d", &temp_phone);
-        current -> phone = temp_phone;
+        current->phone = temp_phone;
 
-        scanf("%d", current -> name);
+        scanf("%d", current->name);
 
-        current -> next = NULL;
-        prev -> next = current;
+        current->next = NULL;
+        prev->next = current;
     }
 
-    for (struct node *p = head; p != NULL; p = p -> next)
+    for (struct node *p = head; p != NULL; p = p->next)
     {
-        if (strcpy(p -> name, "Georgi") == 0)
+        if (strcpy(p->name, "Georgi") == 0)
         {
-            printf("Phone number of Georgi: %d\n", p -> phone);
+            printf("Phone number of Georgi: %d\n", p->phone);
         }
     }
 

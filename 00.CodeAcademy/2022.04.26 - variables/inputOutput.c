@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-int main()
-{
-    float a;
+// int main()
+// {
+//     float a;
 
-    printf("Enter value: ");
-    scanf("%f", &a);
-    printf("Value = %f\n", a);
+//     printf("Enter value: ");
+//     scanf("%f", &a);
+//     printf("Value = %f\n", a);
     
-    return 0;
-}
+//     return 0;
+// }
 
 int main()
 {
