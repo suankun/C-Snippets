@@ -1,19 +1,9 @@
-/*
- * Write a C program to connect two strings into one string without using a library
- * strcat() function.
- */
+// 7. Напишете програма, която конкатенира два стринга, използвайки указатели.
 
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-    // Two Strings to be concatenated
-    char str1[100] = "Hello ", str2[100] = "World!";
-  
-    // Declare a new String to store the concatenated Strings
-    char str3[100];
-  
+void stringConcat(char *str1, char *str2, char *str3) {
     int i = 0, j = 0;
   
     printf("First string: %s\n", str1);
@@ -32,6 +22,18 @@ int main()
 		str3[j] = str2[i];
 	}
     str3[j] = '\0';
+}
+
+int main()
+{
+    // Two Strings to be concatenated
+    char str1[100] = "Hello ", str2[100] = "World!";
+  
+    // Declare a new String to store the concatenated Strings
+    char str3[100];
+  
+    // Concat string
+    stringConcat(str1, str2, str3);
   
     // Print the concatenated string
     printf("Concatenated string: %s\n", str3);

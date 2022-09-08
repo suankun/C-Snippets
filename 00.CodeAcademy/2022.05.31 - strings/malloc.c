@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char * getText()
+char *getText()
 {
 	char * tmp;
 	tmp = malloc(80);
@@ -13,7 +13,7 @@ char * getText()
 
 int main()
 {
-	char * txt;
+	char *txt;
 	txt = getText();
 
 	printf("%s\n", txt);

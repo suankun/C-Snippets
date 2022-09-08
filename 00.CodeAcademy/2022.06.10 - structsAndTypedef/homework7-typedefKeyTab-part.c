@@ -5,7 +5,7 @@ typedef struct test
 {
     char str[20];
     int num;
-}key_t;
+} key_t;
 
 
 int main()

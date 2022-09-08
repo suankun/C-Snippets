@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+
 #define MAX_SIZE 100
 
 int main()
@@ -42,7 +43,7 @@ int main()
         index++;
     }
 
-    reverse[index] = '\0'; 
+    reverse[index] = '\0';
 
     printf("Original string: \n%s\n", str);
     printf("Reverse ordered words: \n%s\n", reverse);

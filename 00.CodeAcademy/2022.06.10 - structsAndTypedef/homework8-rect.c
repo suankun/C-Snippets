@@ -11,12 +11,12 @@
 typedef struct {
     int x;
     int y;
-}rect;
+} rect;
 
 typedef struct {
     rect a;
     rect b;
-}screen;
+} screen;
 
 char makepoint(int a, int b)
 {

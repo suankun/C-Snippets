@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-void tabul( float (*f)(float), float x[], float y[] , int count, float step)
+void tabul(float (*f)(float), float x[], float y[] , int count, float step)
 {
 	for(int i = 0; i < count; i++)
 	{

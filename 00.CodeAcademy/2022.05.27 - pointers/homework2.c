@@ -16,6 +16,7 @@ int (*pfCalc) (int, int) = NULL;
 int main()
 {
 	char op;
+	printf("Enter operatior (+, -, *, /): ");
 	scanf("%c",&op);
 
 	int a = 8;
