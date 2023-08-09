@@ -11,13 +11,20 @@ int main() {
     //    - "w" - writing
     //    - "r" - reading
     //    - "a" - appending
-    fp = fopen();  // TODO - complete
+    // fp = fopen("myFirstFile.txt", "w");  // writing
+    fp = fopen("myFirstFile.txt", "r");
 
-    // if (fp! = NULL) - to make sure that the open operation was successful
-
-    // Code for working with the file..
-
-    fclose(fp);
+    // Step #3 - make sure the opening is successful
+    if (fp == NULL)  // if that's the case, the File opening has failed
+        printf("The Opening of the file has failed\n");
+    else  // fp!=NULL
+    {
+        // printf("The file is Opened for Writing!\n");  // for writing
+        printf("The file is Opened for Reading!\n");  // for reading
+        // Step #4 - write some code associated with the file
+        // Step #5 - close the file
+        fclose(fp);
+    }
 
     return 0;
 }
