@@ -24,3 +24,14 @@ char *short_long_short(const char *a, const char *b) {
 
     return result;
 }
+//
+#include <stdio.h>
+#include <string.h>
+
+char *short_long_short (const char *a, const char *b) {
+  char *res;
+  char *c = (strlen(a) > strlen(b)) ? b : a;
+  char *d = (strlen(a) > strlen(b)) ? a : b;
+  asprintf(&res, "%s%s%s", c, d, c);
+  return res;
+}
