@@ -19,7 +19,7 @@ int main() {
         fclose(fp);
     }
 
-    putchar('a', stdout);
+    putchar('a', stdout);  // putchar('a');
 
     return 0;
 }
