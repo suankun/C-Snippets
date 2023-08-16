@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// fpus(<string>, <pointer_to_a_file>)
+// fputs(<string>, <pointer_to_a_file>)
 
 int main() {
     FILE* fp;
