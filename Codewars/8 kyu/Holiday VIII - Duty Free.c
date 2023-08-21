@@ -3,4 +3,6 @@ int duty_free(int price, int discount, int holiday_cost) {
     return holiday_cost/(price*(discount/100.0));
 }
 //
-duty_free(p, d, h) { return h / (p * d / 100.); }
+int duty_free(int price, int discount, int holiday_cost) {
+    return (holiday_cost * 100) / (price * discount);
+}
