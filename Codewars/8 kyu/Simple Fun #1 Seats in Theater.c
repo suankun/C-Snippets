@@ -3,3 +3,11 @@ int seats_in_theater(int n_cols, int n_rows, int col, int row)
 {
     return (n_cols-(col-1)) * (n_rows-(row));
 }
+//
+int seats_in_theater(int n_cols, int n_rows, int col, int row)
+{
+    int rowbehind = n_rows - row;
+    int colleft = n_cols - col + 1;
+    
+    return rowbehind * colleft;
+}
