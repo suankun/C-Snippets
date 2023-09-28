@@ -4,5 +4,6 @@
         "stdlib.h": "c",
         "stdint.h": "c",
         "stdbool.h": "c"
-    }
+    },
+    "cmake.sourceDirectory": "D:/Programming/GitHub/C-Snippets/Basics/00.Projects/S03-Ed-Edd-n-Eddy-main"
 }
