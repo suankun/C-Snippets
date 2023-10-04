@@ -8,3 +8,13 @@ long arr_plus_arr(const int *a,  const int *b, size_t na, size_t nb)
   for (size_t i = 0; i < nb; i++) sum += b[i];
     return sum;
 }
+//
+#include <stddef.h>
+
+long arr_plus_arr(const int *a,  const int *b, size_t na, size_t nb)
+{
+    long t = 0;
+    while (na--) t += *a++;
+    while (nb--) t += *b++;
+    return t;
+}
