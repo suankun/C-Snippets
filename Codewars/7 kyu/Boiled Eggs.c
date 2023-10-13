@@ -6,3 +6,8 @@ unsigned cooking_time(unsigned eggs)
     double check = ceil(eggs/8.0);
     return eggs<=8 ? 5 : (check * 5);
 }
+//
+unsigned cooking_time(unsigned eggs)
+{
+  return eggs % 8 ? (eggs / 8 * 5) + 5 : eggs / 8 * 5;
+}
