@@ -6,5 +6,6 @@
         "stdbool.h": "c"
     },
     "cmake.sourceDirectory": "D:/Programming/GitHub/C-Snippets/Basics/00.Projects/S03-Ed-Edd-n-Eddy-main",
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": true,
+    "C_Cpp.default.compilerPath": "C:\\msys64\\ucrt64\\bin\\g++.exe"
 }
