@@ -8,3 +8,13 @@ const char *specialNumber(int number)
     }
     return "Special!!";
 }
+//
+const char *specialNumber(int number)
+{
+    while(number)
+    {
+      if(number%10 > 5) return "NOT!!";
+      number /= 10;
+    }
+    return "Special!!";
+}
