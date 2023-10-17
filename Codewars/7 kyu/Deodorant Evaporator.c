@@ -9,3 +9,7 @@ int evaporator(double content, double evap_per_day, double threshold) {
     
     return days;
 }
+//
+int evaporator(double content, double evap_per_day, double threshold) {
+    return (int) ceil(log(threshold/100) / log(1 - evap_per_day/100));
+}
