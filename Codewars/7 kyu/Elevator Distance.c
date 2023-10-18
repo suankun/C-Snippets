@@ -7,3 +7,12 @@ unsigned elevator_distance (size_t length, const int floors[length])
     for (size_t i = 0; i<length-1; i++) sum += abs(floors[i]-floors[i+1]);
     return sum;
 }
+//
+#include <stddef.h>
+
+unsigned elevator_distance (size_t length, const int floors[length])
+{
+	int sum = 0;
+    for (size_t i = 0; i<length-1; i++) sum += abs(floors[i]-floors[i+1]);
+    return sum;
+}
