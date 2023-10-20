@@ -10,3 +10,18 @@ size_t save(size_t n, size_t sizes[n], size_t hd) {
   }
   return count;
 }
+//
+#include <stddef.h>
+
+size_t save(size_t n, size_t sizes[n], size_t hd) {
+
+    size_t total = 0;
+    size_t i;
+    
+    for(i = 0; i < n; i++){
+        total += sizes[i];
+        if( total > hd ) break;       
+    }
+    
+    return i;
+}
