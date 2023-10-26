@@ -10,3 +10,11 @@ int growingPlant(int upSpeed, int downSpeed, int desiredHeight)
     }
     return days;
 }
+//
+#include <math.h>
+int growingPlant(int upSpeed, int downSpeed, int desiredHeight)
+{
+  int result = ceil((float)(desiredHeight - downSpeed)/(upSpeed - downSpeed));
+  if (result <= 0) return 1;
+    return result;
+}
