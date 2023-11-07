@@ -8,3 +8,13 @@ unsigned sequence_sum(unsigned start, unsigned end, unsigned step)
   }
   return sum;
 }
+//
+unsigned sequence_sum(unsigned start, unsigned end, unsigned step)
+{
+    unsigned sum = 0;
+    while (start <= end) {
+        sum += start;
+        start += step;
+    }
+    return sum;
+}
