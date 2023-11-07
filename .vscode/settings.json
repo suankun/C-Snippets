@@ -3,7 +3,8 @@
         "type_traits": "c",
         "stdlib.h": "c",
         "stdint.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "math.h": "c"
     },
     "cmake.sourceDirectory": "D:/Programming/GitHub/C-Snippets/Basics/00.Projects/S03-Ed-Edd-n-Eddy-main",
     "cmake.configureOnOpen": true,
