@@ -16,3 +16,12 @@ char get_grade(int a, int b, int c) {
   
     return result;
 }
+//
+char get_grade(int a, int b, int c) {
+    float avg = (a + b + c) / 3;
+    if (90 <= avg) return 'A';
+    if (80 <= avg) return 'B';
+    if (70 <= avg) return 'C';
+    if (60 <= avg) return 'D';
+    return 'F';
+}
