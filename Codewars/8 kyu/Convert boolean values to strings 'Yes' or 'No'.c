@@ -5,3 +5,11 @@ const char *bool_to_word (bool value)
 {
   return value ? "Yes" : "No";
 }
+//
+#include <stdbool.h>
+#define YES "Yes"
+#define NO "No"
+
+const char *bool_to_word (bool value){
+  return (value) ? YES : NO;
+}
