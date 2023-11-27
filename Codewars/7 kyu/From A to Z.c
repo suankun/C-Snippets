@@ -11,3 +11,10 @@ void letters_range(char letters[26 + 1], const char range[3 + 1]) {
     // Null-terminate the string
     letters[index] = '\0';
 }
+//
+void letters_range (char letters[26 + 1], const char range[3 + 1])
+{
+  for (int i = range[0]; i < (int)range[2] + 1; i++)
+    letters[i - (int)range[0]] = (char)i;
+  letters[range[2] + 1 - range[0]] = '\0';
+}
